@@ -1,0 +1,111 @@
+//
+//  PrefixHeader.pch
+//  Competition
+//
+//  Created by 段帅 on 16/4/12.
+//  Copyright © 2016年 newfuture. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import <UIKit/UIKit.h>
+
+#define APP_ID @"wx2f8a73ffedc5e6d4"
+#define USER_VERSION @"1.0.2"//app版本
+
+//TOOL UI
+
+//#import "DSMainButton.h"
+//#import "DSMainButtonTwo.h"
+//#import "JLActionManager.h"
+//#import "DSTextField.h"
+//#import "AFNetworking.h"
+//#import "UIImageView+WebCache.h"
+//#import "UrlHeader.h"
+//#import "DSHttpManager.h"
+#import "MBProgressHUD.h"
+//#import "UserDefault.h"
+//#import "MJRefresh.h"
+//#import "WebViewJavascriptBridge.h"
+//#import "ChineseString.h"
+
+
+
+
+
+#define  isIOS8 [[[UIDevice currentDevice ]systemVersion]floatValue] >=8.0
+//提示框
+
+#define HUD_SHOW [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+#define HUD_HIDDEN [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+#define FONT(A) [UIFont fontWithName:HIRAGINOFONT  size:A]
+
+
+#define ALERT_SUCESS(string) [[JLActionManager sharedInstance]showHUDWithLabelText:string imageView:SucceedImage inView:self.view];
+#define ALERT_FAIL(string) [[JLActionManager sharedInstance]showHUDWithLabelText:string imageView:FailImage inView:self.view];
+#define SucceedImage [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"验证成功"]]
+#define FailImage [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"验证提示"]]
+
+//屏幕比例
+
+#define SCALE_SCREEN SIZEWIDTH/414
+//不需要等比缩放的控件
+#define SCALE(A) 0.383*A
+//需要等比缩放的空间
+#define SCALE1080P(A) A*0.383*(SIZEWIDTH/414)
+
+#define SIZEWIDTH   [[UIScreen mainScreen] bounds].size.width
+#define SIZEHEIGHT  [[UIScreen mainScreen] bounds].size.height
+/**
+ placeHolder图片
+ */
+#define IMAGE_PLACEHOLDER_BANDDER @"关于大赛-专委会-背景图.png"
+#define IMAGE_PLACEHOLDER_EXPERT @"关于大赛-专委会-背景图.png"
+
+
+#define FONE_MY(A) [UIFont systemFontOfSize:A*0.383]
+//颜色
+#define COLOR_BACKGROUND  [UIColor colorWithRed:248.0/255 green:248.0/255 blue:248.0/255 alpha:1.0f]
+#define COLOR_F1F1F1  [UIColor colorWithRed:241.0/255 green:241.0/255 blue:241.0/255 alpha:1.0f]
+// 主色红 
+#define COLOR_MAIN [UIColor colorWithRed:250/255.0 green:54/255.0 blue:54/255.0 alpha:1]
+/**
+ *主色 不能点击
+ */
+#define COLOR_MAIN_NOCLICK [UIColor colorWithRed:250/255.0 green:54/255.0 blue:54/255.0 alpha:0.5]
+/**
+ *主色 高亮状态
+ */
+#define COLOR_MAIN_HIGH [UIColor colorWithRed:222/255.0 green:42/255.0 blue:49/255.0 alpha:1]
+/*？
+ *大赛简介颜色 黑333333
+ */
+#define COLOR_TITLE_MAIN [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]
+/**
+ *灰色字
+ */
+
+
+#define COLOR_TITLE_A5A5A5 [UIColor colorWithRed:165/255.0 green:165/255.0 blue:165/255.0 alpha:1]
+#define COLOR_TITLE_999999 [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1]
+
+
+/**
+ *描边
+ */
+#define COLOR_LINE_dfdfdf [UIColor colorWithRed:223/255.0 green:223/255.0 blue:223/255.0 alpha:1]
+#define COLOR_LINE_dbdbdb [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1]
+#define COLOR_LINE_SYSTEM [UIColor colorWithRed:200/255.0 green:199/255.0 blue:204/255.0 alpha:1]
+/**
+ 字体-冬青黑体简体
+ */
+#define HIRAGINOFONT  @"HiraginoSansGB-W3"
+
+//userdefault
+#define USERDEFAULT [NSUserDefaults standardUserDefaults]
+#define ISLOGIN [[NSUserDefaults standardUserDefaults] boolForKey:@"isLogIn"]
+#define ISBAOMING [[NSUserDefaults standardUserDefaults] boolForKey:@"isBaoMing"]
+#define ISJIAOFEI [[NSUserDefaults standardUserDefaults] boolForKey:@"isJiaoFei"]
+#define ISSHANGCHUAN [[NSUserDefaults standardUserDefaults] boolForKey:@"isShangChuan"]
+
+#endif /* PrefixHeader_pch */
